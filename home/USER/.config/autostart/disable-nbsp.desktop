@@ -5,5 +5,5 @@ Type=Application
 Terminal=false
 Icon=xorg
 Name=Disable nbsp
-Description=Disable the non-breaking space character that is especially annoying on Nordic keyboard layouts when trying to type a pipe (|) with AltGr
+Comment=Disable the non-breaking space character that is especially annoying on Nordic keyboard layouts when trying to type a pipe (|) with AltGr
 Exec=setxkbmap -option "nbsp:none"
