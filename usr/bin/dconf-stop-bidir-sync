@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# dconf-stop-bidir-sync | Disable dconf bi-directional sync for all users
+
+# Scipt only meant for regular users
+(( $EUID == 0 )) && exit 1
+
+# Zenity installed? (TODO kdialog support)
+which zenity &> /dev/null || exit 1
+
+# Zenity dialog
+zenity --question --width 420 --title "Bi-directional dconf sync" --text "This was enabled by default to setup the desktop environment.\nWould you like to disable it?\n\nNOTE: Say 'No' here if this is a multi-user system and some of them have not logged in at least once yet."
+res=$?
+
+# Disable user autostart file
+echo "NoDisplay=true" >> $HOME/.config/autostart/stop-bidir-dconf-sync.desktop
+
+# Exit if not disabling system-wide
+(( $res == 1 )) && exit 2
+
+# Remove dconf bi-directional sync marker file
+if [ -f /etc/dconf/profile/user ]; then
+	PASSWD="$(zenity --password --title=Authentication)\n"
+	echo -e $PASSWD | sudo -S rm -f /etc/dconf/profile/user
+	unset PASSWD
+fi

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  auteur  : SLK
+  version : v2010111401
+  licence : GPL
+
+-->
+<style-scheme id="hardballDarkTheme" _name="hardballDarkTheme" version="1.0">
+  <author>Nico SLK</author>
+  <_description>Black-color-scheme using Hardball's color palette</_description>
+
+<!--
+  COLORS
+-->
+  <color name="UNKNOWN"                     value="#FF7700"/> <!-- orange F7 -->
+
+  <color name="Bg"                          value="#111111"/> <!-- gris fonce 1 -->
+  <color name="Txt"                         value="#BBBBBB"/> <!-- gris clair B -->
+  <color name="BgSel"                       value="#00FF00"/> <!-- vert F -->
+  <color name="FgSel"                       value="#000000"/> <!-- noir -->
+  <color name="BgCur"                       value="#222222"/> <!-- gris fonce 2 -->
+  <color name="FgCur"                       value="#666666"/> <!-- gris fonce 6 -->
+  <color name="FgSp"                        value="#2F2F2F"/> <!-- gris fonce 2F -->
+
+  <color name="BgSurlign"                   value="#550044"/> <!-- violet fonce -->
+  <color name="FgSurlign"                   value="#00FF00"/> <!-- vert F -->
+  <color name="FgErr"                       value="#550000"/> <!-- rouge fonce 5 -->
+  <color name="BgErr"                       value="#FF0000"/> <!-- rouge F -->
+
+  <color name="FgComment"                   value="#FF00DD"/> <!-- rose -->
+
+  <color name="FgKeyWordString"             value="#3460A8"/> <!-- bleu -->
+  <color name="FgKeyWordString2"            value="#91A4C3"/> <!-- bleu clair -->
+  <color name="FgKeyWordIdent"              value="#00FF00"/> <!-- vert F -->
+  <color name="FgKeyWordStmt"               value="#00CC00"/> <!-- vert C -->
+  <color name="FgKeyWordType"               value="#FFFF00"/> <!-- jaune F -->
+  <color name="FgKeyWordSub"                value="#DD4411"/> <!-- orange fonce D41 -->
+<!--
+  CONFIG
+-->
+
+  <!-- apparence generale -->
+  <style name="text"                        foreground="Txt" background="Bg"/>
+  <style name="selection"                   foreground="FgSel" background="BgSel"/>
+  <style name="cursor"                      foreground="Txt"/>
+  <style name="current-line"                background="BgCur"/>
+  <style name="line-numbers"                foreground="FgCur" background="BgCur"/>
+  <style name="right-margin"                background="FgCur"/>
+  <style name="draw-spaces"                 foreground="FgSp"/>
+
+  <!-- parentheses -->
+  <style name="bracket-match"               bold="true" underline="true"/>
+  <style name="bracket-mismatch"            foreground="FgErr" bold="true" underline="true"/>
+  
+  <!-- recherche -->
+  <style name="search-match"                foreground="FgSurlign" background="BgSurlign"/>  
+
+  <!-- commentaires -->
+  <style name="def:comment"                 foreground="FgComment"/>
+  <style name="def:shebang"                 foreground="FgComment" bold="true"/>
+  <style name="def:doc-comment-element"     italic="true"/>
+
+  <!-- constantes -->
+  <style name="def:constant"                foreground="FgKeyWordString"/>
+  <style name="def:string"                  foreground="FgKeyWordString"/>
+  <style name="def:special-char"            foreground="FgKeyWordString2"/>
+  <style name="def:special-constant"        foreground="UNKNOWN"/>
+  <style name="def:floating-point"          foreground="FgKeyWordString"/>
+
+  <!-- mots cle -->
+  <style name="def:identifier"              foreground="FgKeyWordIdent"/>
+  <style name="def:statement"               foreground="FgKeyWordStmt" bold="true"/>
+  <style name="def:type"                    foreground="FgKeyWordType" bold="true"/>
+
+  <!-- comportement -->
+  <style name="def:preprocessor"            foreground="Txt"/>
+  <style name="def:error"                   foreground="FgErr" background="BgErr" bold="true"/>
+  <style name="def:note"                    background="Bg" bold="true"/>
+  <style name="def:underlined"              italic="true" underline="true"/>
+
+  <!-- specifique au language-->
+  <style name="c:preprocessor"              foreground="UNKNOWN"/>
+  <style name="c:included-file"             foreground="UNKNOWN"/>
+  <style name="c:common-defines"            foreground="UNKNOWN"/>
+
+  <style name="docbook-element"             foreground="UNKNOWN"/>
+  <style name="docbook:header-elements"     foreground="UNKNOWN"/>
+  <style name="docbook:formatting-elements" foreground="UNKNOWN"/>
+  <style name="docbook:gui-elements"        foreground="UNKNOWN"/>
+  <style name="docbook:structural-elements" foreground="UNKNOWN"/>
+
+  <style name="mooscript:special-vars"      foreground="UNKNOWN"/>
+
+  <style name="python:string-conversion"    foreground="UNKNOWN"/>
+  <style name="python:module-handler"       foreground="FgKeyWordType"/>                <!-- from...import-->
+  <style name="python:special-variable"     foreground="FgKeyWordSub"/>                 <!-- self.-->
+  <style name="python:builtin-constant"     foreground="FgKeyWordString" bold="true"/>  <!-- None-->
+  <style name="python:builtin-object"       foreground="UNKNOWN"/>
+  <style name="python:builtin-function"     foreground="FgKeyWordSub"/>                 <!-- str(), len()-->
+  <style name="python:boolean"              foreground="FgKeyWordString" bold="true"/>  <!-- False-->
+
+  <style name="scheme:parens"               foreground="UNKNOWN"/>
+  <style name="scheme:any-function"         foreground="UNKNOWN"/>
+
+  <style name="diff:added-line"             foreground="Txt"/>
+  <style name="diff:removed-line"           foreground="Txt"/>
+  <style name="diff:changed-line"           use-style="def:preprocessor"/>
+  <style name="diff:diff-file"              use-style="def:type"/>
+  <style name="diff:location"               use-style="def:statement"/>
+  <style name="diff:special-case"           use-style="def:constant"/>
+
+  <style name="xml:tags"                    foreground="Txt"/>
+  <style name="xml:namespace"               bold="true"/>
+  <style name="xml:attribute-name"          foreground="Txt"/>
+  <style name="xml:element-name"            foreground="Txt"/>
+  <style name="xml:entity"                  foreground="Txt"/>
+  <style name="xml:cdata-delim"             foreground="Txt"/>
+  <style name="xml:processing-instruction"  foreground="Txt"/>
+  <style name="xml:doctype"                 foreground="Txt"/>
+
+  <style name="js:object"                   foreground="Txt" bold="true"/>
+  <style name="js:constructors"             foreground="Txt"/>
+
+  <style name="latex:display-math"          foreground="Txt"/>
+  <style name="latex:command"               foreground="Txt" bold="true"/>
+  <style name="latex:include"               use-style="def:preprocessor"/>
+
+  <style name="sh:variable1"                foreground="Txt"/>
+  <style name="sh:variable2"                foreground="Txt"/>
+
+  <!-- legacy styles for old lang files: do NOT use them in lang files -->
+  <style name="Others"                      foreground="Txt" bold="true"/>
+  <style name="Others 2"                    foreground="Txt"/>
+  <style name="Others 3"                    foreground="Txt"/>
+
+</style-scheme>

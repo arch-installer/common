@@ -1,0 +1,120 @@
+[
+	// Instant tab switching with CTRL+(SHIFT)+TAB
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.previousEditor"
+	},
+
+	// Type {} characters with CTRL+ALT+(7 & 0) on *nix systems
+	{
+		"key": "ctrl+alt+7",
+		"command": "type", "args": { "text": "{" }, "when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+0",
+		"command": "type", "args": { "text": "}" }, "when": "editorTextFocus"
+	},
+
+	// Type [] characters with CTRL+ALT+(8 & 9) on *nix systems
+	{
+		"key": "ctrl+alt+8",
+		"command": "type", "args": { "text": "[" }, "when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+9",
+		"command": "type", "args": { "text": "]" }, "when": "editorTextFocus"
+	},
+
+	// Modify text editor zoom with CTRL+(0|+|-)
+	// TODO Also support numpad keys
+	{
+		"key": "ctrl+0",
+		"command": "editor.action.fontZoomReset"
+	},
+	{
+		"key": "ctrl+[Minus]",
+		"command": "editor.action.fontZoomIn"
+	},
+	{
+		"key": "ctrl+-",
+		"command": "editor.action.fontZoomOut"
+	},
+
+	// Modify viewport zoom with CTRL+SHIFT+(0|+|-)
+	{
+		"key": "ctrl+shift+0",
+		"command": "workbench.action.zoomReset"
+	},
+	{
+		"key": "ctrl+shift+[Minus]",
+		"command": "workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+shift+-",
+		"command": "workbench.action.zoomOut"
+	},
+
+	// Unbinds
+	{
+		"key": "ctrl+tab",
+		"command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+		"when": "inEditorsPicker && inQuickOpen"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+		"when": "inEditorsPicker && inQuickOpen"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "-workbench.action.openPreviousRecentlyUsedEditorInGroup"
+	},
+	{
+		"key": "ctrl+pageup",
+		"command": "-workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+pagedown",
+		"command": "-workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+0",
+		"command": "-workbench.action.focusSideBar"
+	},
+	{
+		"key": "ctrl+shift+0",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+numpad0",
+		"command": "-workbench.action.zoomReset"
+	},
+	{
+		"key": "ctrl+numpad_add",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+[Minus]",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+-",
+		"command": "-workbench.action.zoomOut"
+	},
+	{
+		"key": "ctrl+numpad_subtract",
+		"command": "-workbench.action.zoomOut"
+	},
+	{
+		"key": "ctrl+shift+-",
+		"command": "-workbench.action.navigateForward"
+	}
+]
