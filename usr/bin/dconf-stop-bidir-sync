@@ -7,9 +7,12 @@
 # Zenity installed? (TODO kdialog support)
 which zenity &> /dev/null || exit 1
 
-# Zenity dialog
-zenity --question --width 420 --title "Bi-directional dconf sync" --text "This was enabled by default to setup the desktop environment.\nWould you like to disable it?\n\nNOTE: Say 'No' here if this is a multi-user system and some of them have not logged in at least once yet."
-res=$?
+users="$(ls -1 /home/ | wc -l)"
+if (( $users > 1 )); then
+	# Zenity dialog
+	zenity --question --width 420 --title "Bi-directional dconf sync" --text "This was enabled by default to setup the desktop environment.\nWould you like to disable it now?\n\nNOTE: Say 'No' here if this is a multi-user system and some of them have not logged in at least once yet."
+	res=$?
+fi
 
 # Disable user autostart file
 echo "NoDisplay=true" >> $HOME/.config/autostart/stop-bidir-dconf-sync.desktop
@@ -19,7 +22,7 @@ echo "NoDisplay=true" >> $HOME/.config/autostart/stop-bidir-dconf-sync.desktop
 
 # Remove dconf bi-directional sync marker file
 if [ -f /etc/dconf/profile/user ]; then
-	PASSWD="$(zenity --password --title=Authentication)\n"
+	PASSWD="$(zenity --password --title='Bi-directional dconf sync')\n"
 	echo -e $PASSWD | sudo -S rm -f /etc/dconf/profile/user
 	unset PASSWD
 fi
