@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-Terminal=false
-Icon=script
-Name=Stop bi-dir dconf sync
-Comment=Ask the user to disable bi-directional dconf sync
-Exec=/usr/bin/dconf-stop-bidir-sync

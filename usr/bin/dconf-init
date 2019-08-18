@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# dconf-init | Load DE specific dconf settings for the 1st time
+
+# Load config
+[ -r /etc/dconf/de.ini ] && dconf load / < /etc/dconf/de.ini
+
+# Disable user autostart file
+echo "NoDisplay=true" >> $HOME/.config/autostart/dconf-init.desktop
+
+# Requires zenity (TODO: kdialog support)
+which zenity &> /dev/null || exit 1
+
+# Ask to log out by killing X.org
+# TODO: Figure out a better way
+zenity --question --width 420 --title "Log out (kill Xorg)" --text "Arch Linux has been installed successfully &\nyour default user configuration has been loaded.\nIt is adviced to re-log right now to avoid issues caused by the dconf load.\n\nWould you like to log out?"
+res=$?
+
+if (( $res == 0 )); then
+	PASSWD="$(zenity --password --title='Log out (kill Xorg)')\n"
+	echo -e $PASSWD | sudo -S killall Xorg
+	unset PASSWD
+fi
