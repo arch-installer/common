@@ -1,9 +1,10 @@
 [Desktop Entry]
-Encoding=UTF-8
-Version=1.0
 Type=Application
-Terminal=false
-Icon=script
+Version=1.0
 Name=Dconf initialize
 Comment=Load DE specific dconf settings for the 1st time | ArchInstaller.py
+TryExec=/usr/bin/dconf-init
 Exec=/usr/bin/dconf-init
+Icon=script
+Terminal=false
+StartupNotify=false

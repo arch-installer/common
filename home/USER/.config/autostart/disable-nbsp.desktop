@@ -1,9 +1,11 @@
 [Desktop Entry]
-Encoding=UTF-8
-Version=1.0
 Type=Application
-Terminal=false
-Icon=xorg
+Version=1.0
 Name=Disable nbsp
 Comment=Disable the non-breaking space character that is especially annoying on Nordic keyboard layouts when trying to type a pipe (|) with AltGr
+TryExec=setxkbmap
 Exec=setxkbmap -option "nbsp:none"
+Icon=xorg
+Terminal=false
+StartupNotify=false
+X-GNOME-Autostart-Delay=5
