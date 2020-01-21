@@ -5,7 +5,7 @@
 file="$HOME/.config/autostart/dconf-init.desktop"
 
 # Load config
-[ -f $file ] && dconf load / < /etc/dconf/de.ini || exit 1
+[[ -r $file && -r /etc/dconf/de.ini ]] && dconf load / < /etc/dconf/de.ini
 
 # Stop loading again
 rm -f $HOME/.config/autostart/dconf-init.desktop
