@@ -58,6 +58,13 @@
 		"command": "workbench.action.zoomOut"
 	},
 
+	// Alt + Enter for completion suggestions
+	{
+		"key": "alt+enter",
+		"command": "editor.action.triggerSuggest",
+		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+	},
+
 	// Unbinds
 	{
 		"key": "ctrl+tab",
@@ -116,5 +123,30 @@
 	{
 		"key": "ctrl+shift+-",
 		"command": "-workbench.action.navigateForward"
+	},
+	{
+		"key": "alt+enter",
+		"command": "-debug.openBreakpointToSide",
+		"when": "breakpointsFocused"
+	},
+	{
+		"key": "alt+enter",
+		"command": "-editor.action.selectAllMatches",
+		"when": "editorFocus && findWidgetVisible"
+	},
+	{
+		"key": "alt+enter",
+		"command": "-python.datascience.runcurrentcellandaddbelow",
+		"when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection"
+	},
+	{
+		"key": "ctrl+space",
+		"command": "-toggleSuggestionDetails",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+space",
+		"command": "-editor.action.triggerSuggest",
+		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
 	}
 ]
